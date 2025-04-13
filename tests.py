@@ -77,3 +77,21 @@ def test_get_list_of_favorites_books(collector):
     collector.add_book_in_favorites("Книга 1")
     collector.add_book_in_favorites("Книга 2")
     assert collector.get_list_of_favorites_books() == ["Книга 1", "Книга 2"]
+
+#Тест get_book_genre
+def test_get_book_genre_returns_correct_genre():
+    collector = BooksCollector()
+    collector.add_new_book("Гарри Поттер")
+    collector.set_book_genre("Гарри Поттер", "Фантастика")
+    assert collector.get_book_genre("Гарри Поттер") == "Фантастика"
+
+#Тест get_books_genre
+def test_get_books_genre_returns_full_dict():
+    collector = BooksCollector()
+    collector.add_new_book("Гарри Поттер")
+    collector.add_new_book("Шерлок Холмс")
+    expected = {
+        "Гарри Поттер": "",
+        "Шерлок Холмс": ""
+    }
+    assert collector.get_books_genre() == expected
