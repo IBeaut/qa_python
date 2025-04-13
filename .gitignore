@@ -1,0 +1,13 @@
+# IDE / PyCharm
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build files
+.build/
+.target/
